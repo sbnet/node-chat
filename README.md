@@ -1,1 +1,1 @@
-# node-chat
+# Simple node Chat using sockets
