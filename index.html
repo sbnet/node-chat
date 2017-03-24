@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Super Chat temps réel !</title>
+        <title>Node.js Chat</title>
         <style>
             #zone_chat strong {
                 color: white;
@@ -11,7 +11,7 @@
             }
         </style>
     </head>
- 
+
     <body>
         <h1>Le super Chat temps réel !</h1>
 
@@ -23,9 +23,8 @@
         <section id="zone_chat"></section>
 
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
         <script>
-
             // Connexion à socket.io
             var socket = io.connect('http://localhost:8080');
 
@@ -52,7 +51,7 @@
                 $('#message').val('').focus(); // Vide la zone de Chat et remet le focus dessus
                 return false; // Permet de bloquer l'envoi "classique" du formulaire
             });
-            
+
             // Ajoute un message dans la page
             function insereMessage(pseudo, message) {
                 $('#zone_chat').prepend('<p><strong>' + pseudo + '</strong> ' + message + '</p>');
